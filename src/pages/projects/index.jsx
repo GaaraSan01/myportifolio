@@ -1,12 +1,12 @@
 import Menu from "../../components/header"
 import GlobalStyle from "../../style/global"
 
-export const Projets = () => {
+export const Project = () => {
     return(
         <>
             <GlobalStyle />
             <Menu />
-            <h1>Hellow world</h1>
+            <h1>Hellow world, Projects</h1>
         </>
     )
 }

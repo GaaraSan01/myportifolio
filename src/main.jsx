@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './pages/home'
+import {Home} from './pages/home'
+import { Rotas } from './router/router'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Rotas />
   </React.StrictMode>,
 )

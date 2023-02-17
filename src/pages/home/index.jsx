@@ -16,7 +16,7 @@ import figma from '../../assets/figma.png'
 import { Card_Project } from '../../components/card_project'
 import { Footer } from '../../components/footer'
 
-function App() {
+export function Home() {
   const [api, setApi] = useState([])
   const [projects, setProjects] = useState([])
 
@@ -60,7 +60,6 @@ function App() {
           </TitleStyle>
 
           <GridStyle>
-
             <MiniCard img={html5} word={'HTML5'} />
             <MiniCard img={css3} word={'CSS3'} />
             <MiniCard img={js} word={'JavaScript'} />
@@ -69,7 +68,6 @@ function App() {
             <MiniCard img={node} word={'NodeJS'} />
             <MiniCard img={next} word={'NextJS'} />
             <MiniCard img={figma} word={'Figma'} />
-
           </GridStyle>
         </Conhecimentos>
         <Projetos>
@@ -105,6 +103,3 @@ function App() {
     </div>
   )
 }
-
-export default App
-

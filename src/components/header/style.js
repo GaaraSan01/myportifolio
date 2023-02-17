@@ -28,4 +28,8 @@ li{
     cursor: pointer;
     color: var(--azul);
 }
+a{
+    text-decoration: none;
+    color: var(--azul);
+}
 `
