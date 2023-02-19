@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContentPrincipal = styled.div`
     margin: auto;
-    height: 80vh;
+    min-height: 80vh;
     width: 90%;
     border-radius: 45px;
     background: var(--verde);
@@ -12,6 +12,17 @@ export const ContentPrincipal = styled.div`
     justify-content: space-around;
     padding: 0 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media(max-width: 1100px){
+        width: 95%;
+    }
+    @media(max-width: 885px){
+        padding: 0 25px;
+    }
+    @media(max-width: 820px){
+        flex-direction: column;
+        padding: 20px;
+    }
 `
 export const Copy = styled.div`
     max-width: 600px;
@@ -44,6 +55,18 @@ export const Copy = styled.div`
     a:hover{
         color: var(--verde);
         background: var(--azul);
+    }
+
+    @media(max-width: 986px){
+        h1{
+            font-size: 28px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    @media(max-width: 820px){
+        padding: 10px;
     }
 `
 
@@ -88,7 +111,7 @@ export const GridStyle = styled.div`
     align-items: center;
 `
 export const Projetos = styled.section`
-    height: 90vh;
+    max-height: 80vh;
     width: 100%;
     padding: 25px 0;
 
@@ -141,6 +164,13 @@ export const HabContent = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @media(max-width: 1000px){
+        padding: 10px;
+    }
+    @media(max-width: 695px){
+        flex-direction: column;
+    }
 `
 
 export const TituloHab = styled.h1`
@@ -148,6 +178,10 @@ export const TituloHab = styled.h1`
     font-weight: 700;
     font-size: 64px;
     line-height: 77px;
+
+    @media(max-width: 938px){
+        font-size: 50px;
+    }
 `
 
 export const CopyHabi = styled.ul`
@@ -156,4 +190,7 @@ export const CopyHabi = styled.ul`
     font-size: 28px;
     line-height: 38px;
     color: var(--verde);
+    @media(max-width: 825px){
+        font-size: 20px;
+    }
 `

@@ -52,4 +52,8 @@ export const CardPerson  = styled.div`
         color: #64BC9E;
         background: transparent;
     }
+    @media(max-width: 820px){
+        max-width: 70vw;
+        padding: 50px;
+    }
 `

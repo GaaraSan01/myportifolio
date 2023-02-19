@@ -32,4 +32,8 @@ export const Cards = styled.div`
         box-shadow: 0 0px 15px var(--white);
         transform: translateX(.5px) scale(1.05);
     }
+
+    @media(max-width: 550px){
+        width: 100%;
+    }
 `

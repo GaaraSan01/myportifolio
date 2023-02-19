@@ -1,10 +1,15 @@
+//React dependences
 import { useState, useEffect } from 'react'
-import GlobalStyle from '../../style/global'
-import { ContentPrincipal, Conhecimentos, Copy, TitleStyle, GridStyle, Projetos, CarrosselImg, Habilidades, HabContent, TituloHab, CopyHabi } from './style'
-import { GetApi, GetProjects } from '../../api/_api'
+
+//Components
 import Card from '../../components/card'
 import Menu from '../../components/header'
 import { MiniCard } from '../../components/miniCard'
+import { Card_Project } from '../../components/card_project'
+import { Footer } from '../../components/footer'
+import { Load } from '../../components/loading'
+
+//Assets
 import html5 from '../../assets/html-5.png'
 import css3 from '../../assets/css-3.png'
 import js from '../../assets/js.png'
@@ -13,13 +18,29 @@ import react from  '../../assets/react.png'
 import node from '../../assets/nodeJS.png'
 import next from '../../assets/next-js.svg'
 import figma from '../../assets/figma.png'
-import { Card_Project } from '../../components/card_project'
-import { Footer } from '../../components/footer'
+
+//Styles
+import GlobalStyle from '../../style/global'
+import { ContentPrincipal, 
+  Conhecimentos, 
+  Copy, 
+  TitleStyle, 
+  GridStyle, 
+  Projetos, 
+  CarrosselImg, 
+  Habilidades, 
+  HabContent, 
+  TituloHab, 
+  CopyHabi } from './style'
+  
+//Api
+import { GetApi, GetProjects } from '../../api/_api'
 
 export function Home() {
   const [api, setApi] = useState([])
   const [projects, setProjects] = useState([])
 
+  //Pegando dados de projetos
   const ProjectsApi = async () => {
     const getProjects = await GetProjects.get()
     const data =  getProjects.data
@@ -27,6 +48,8 @@ export function Home() {
   }
 
   useEffect(() => {
+
+    //Pegando dados Principais
     GetApi.get().then(({data}) => {
       setApi(data)
       console.log(data)
@@ -39,9 +62,8 @@ export function Home() {
       <GlobalStyle />
       <Menu />
       <ContentPrincipal>
-        {
-          !api ? <p>Carregando...</p> : <Card img={api.avatar_url} name={api.name} bio={api.bio} link={api.html_url}/>
-        }
+        {!api && <Load />}
+        {api && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={api.html_url}/>}
         <Copy>
             <h1>I`m developer Front-End from Brazil</h1>
             <p>
