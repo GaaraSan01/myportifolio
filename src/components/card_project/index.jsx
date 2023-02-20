@@ -1,11 +1,11 @@
 import { Project } from "./style"
 
-export const Card_Project = ({img, phrase, linkProject}) => {
+export const Card_Project = ({img, name, linkProject}) => {
     return(
         <>
             <Project>
                 <img src={img} alt="" />
-                <h2>{phrase}</h2>
+                <h2>{name}</h2>
                 <a href={linkProject} target="_blanc">Ver no Github</a>
             </Project>
         </>

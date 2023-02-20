@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Project = styled.div`
-    min-width: 310px;
+    max-width: 310px;
     height: 335px;
     display: flex;
     flex-direction: column;
@@ -24,5 +24,19 @@ export const Project = styled.div`
     }
     :hover{
         transform: translateX(.5px) scale(1.03);
+    }
+    a{
+        padding: 10px 20px;
+        color: var(--verde);
+        background: var(--azul);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s ease-in-out;
+    }
+    a:hover{
+        color: var(--azul);
+        background: transparent;
+        border: 1px solid var(--azul);
     }
 `

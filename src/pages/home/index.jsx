@@ -27,11 +27,10 @@ import { ContentPrincipal,
   TitleStyle, 
   GridStyle, 
   Projetos, 
-  CarrosselImg, 
-  Habilidades, 
-  HabContent, 
-  TituloHab, 
-  CopyHabi } from './style'
+  CarrosselImg,
+  StyleHabilities,
+  ContentHabilities
+} from './style'
   
 //Api
 import { GetApi, GetProjects } from '../../api/_api'
@@ -41,11 +40,11 @@ export function Home() {
   const [projects, setProjects] = useState([])
 
   //Pegando dados de projetos
-  const ProjectsApi = async () => {
-    const getProjects = await GetProjects.get()
-    const data =  getProjects.data
-    setProjects(data)
-  }
+   const ProjectsApi = async () => {
+      const getProjects = await GetProjects.get()
+      const data =  getProjects.data
+      setProjects(data)
+    }
 
   useEffect(() => {
 
@@ -98,7 +97,7 @@ export function Home() {
           </TitleStyle>
           <CarrosselImg>
             {
-              projects.slice(0,4).map(repos => <Card_Project key={repos.id} img={'test'} phrase={repos.name} linkProject={repos.html_url}/>)
+              projects.slice(0,4).map(repos => <Card_Project key={repos.id} img={'test'} name={repos.name} linkProject={repos.html_url}/>)
             }
           </CarrosselImg>
           <span>
@@ -106,20 +105,21 @@ export function Home() {
            {!api && <p>Carregando...</p>}
           </span>
         </Projetos>
-        <Habilidades>
-          <HabContent>
-            <TituloHab>
-              Principais <br/>
-              Habilidades
-            </TituloHab>
-            <CopyHabi>
-              <li>Criatividade;</li>
-              <li>Inteligencia Emocional;</li>
-              <li>Aprendizado Continuo;</li>
-              <li>Objetivo & Focado.</li>
-            </CopyHabi>
-          </HabContent>
-        </Habilidades>
+        <StyleHabilities>
+          <ContentHabilities>
+            <div>
+              <h1>Principais Habilidades</h1>
+            </div>
+            <div>
+              <ul>
+                <li>Criatividade;</li>
+                <li>Inteligencia Emocional;</li>
+                <li>Aprendizado Continuo;</li>
+                <li>Objetivo & Focado.</li>
+              </ul>
+            </div>
+          </ContentHabilities>
+        </StyleHabilities>
 
         <Footer />
     </div>

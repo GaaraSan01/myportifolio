@@ -114,27 +114,13 @@ export const Projetos = styled.section`
     max-height: 80vh;
     width: 100%;
     padding: 25px 0;
+    margin-bottom: 15vh;
 
     span{
         display: block;
         width: 90%;
         height: auto;
         margin: auto;
-    }
-
-    a{
-        padding: 10px 20px;
-        color: var(--verde);
-        background: var(--azul);
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: 0.3s ease-in-out;
-    }
-    a:hover{
-        color: var(--azul);
-        background: transparent;
-        border: 1px solid var(--azul);
     }
 `
 export const CarrosselImg = styled.div`
@@ -146,51 +132,57 @@ export const CarrosselImg = styled.div`
     left: 96px;
     top: 1509px;
     overflow-x: scroll;
+    ::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: var(--azul);
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar{
+        height: 7px;
+    }
 `
-export const Habilidades = styled.section`
-    height: 90vh;
+
+export const StyleHabilities = styled.section`
+    height: 70vh;
     width: 100%;
-    padding: 25px 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 `
-export const HabContent = styled.div`
-    margin: auto;
+export const ContentHabilities = styled.div`
+    min-height: 80%;
     width: 90%;
-    min-height: 448px;
-    border-radius: 52px;
     background: var(--azul);
-    padding: 20px;
+    border-radius: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
-    @media(max-width: 1000px){
-        padding: 10px;
+    div{
+        width: 45%;;
+        -height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
     }
-    @media(max-width: 695px){
-        flex-direction: column;
+    h1{
+        font-size: 40px;
     }
-`
-
-export const TituloHab = styled.h1`
-    color: var(--verde);
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 77px;
-
-    @media(max-width: 938px){
-        font-size: 50px;
-    }
-`
-
-export const CopyHabi = styled.ul`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 38px;
-    color: var(--verde);
-    @media(max-width: 825px){
+    ul li{
         font-size: 20px;
+    }
+    @media(max-width: 660px){
+        h1{
+            font-size: 30px;
+        }
+        ul li{
+            font-size: 16px;
+        }
+    }
+    @media(max-width: 500px){
+        flex-direction: column;
     }
 `
