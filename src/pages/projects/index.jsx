@@ -2,7 +2,7 @@
 import Menu from "../../components/header"
 import { Footer } from "../../components/footer"
 import { Card_Project } from "../../components/card_project"
-import {Load} from "../../components/loading"
+import { Load } from "../../components/loading"
 
 //css
 import { ContentProject, DivProjects, DivVerMais, VerMais } from "./style"
@@ -16,8 +16,14 @@ import { GetProjects } from "../../api/_api"
 import { useState, useEffect } from "react"
 
 export const Project = () => {
-
+    //Pegando mostrando dados da API
     const [apiProjects, setApiProjects] = useState([])
+
+    //Tratamente dos Resultados
+    const [loading, setLoading] = useState(true)
+    const [isError, setIsError] = useState(false)
+
+    //Ver mais...
     const [total, setTotal] = useState(true)
 
     const handleClick = () => {
@@ -25,16 +31,24 @@ export const Project = () => {
     }
 
     const getProjects = async () => {
-        const projects = await GetProjects.get()
-        const data = projects.data
-        setApiProjects(data)
+        //Pegando os projetos
+        try {
+            const projects = await GetProjects.get()
+            const data = projects.data
+            setApiProjects(data)
+        } catch (error) {
+            console.log(error)
+            setIsError(true)
+        } finally {
+            setLoading(false)
+        }
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         getProjects()
-    },[])
+    }, [])
 
-    return(
+    return (
         <>
             <GlobalStyle />
             <Menu />
@@ -43,19 +57,29 @@ export const Project = () => {
                     <h1>Meus Projetos</h1>
                 </TitleStyle>
                 <DivProjects>
-                    {!apiProjects && <Load/>}
-                    {total && apiProjects.slice(0,3).map((repos) =>{
-                       return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url}/>
+                    {loading && <Load />}
+                    {!isError && total && apiProjects.slice(0, 3).map((repos) => {
+                        return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url} />
                     })}
-                    {!total && apiProjects.map((repos) => {
-                        return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url}/>
+                    {!isError && !total && apiProjects.map((repos) => {
+                        return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url} />
                     })}
                 </DivProjects>
                 <DivVerMais>
-                    <VerMais onClick={handleClick}>{total ? "Ver mais..." : "Ver menos..."}</VerMais>
+                    {loading && (
+                        <p>Carregando...</p>
+                    )}
+                    {isError && (
+                        <p>Error ao carregar...</p>
+                    )}
+                    {!loading && !isError && (
+                        <VerMais onClick={handleClick}>
+                            {total ? "Ver mais..." : "Ver menos..."}
+                        </VerMais>
+                    )}
                 </DivVerMais>
             </ContentProject>
-            <Footer/>
+            <Footer />
         </>
     )
 }

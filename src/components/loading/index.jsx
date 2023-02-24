@@ -1,7 +1,12 @@
-import { StyledLoad } from "./style"
+import { StyledLoad, DivLoad } from "./style"
 
 export const Load = () => {
     return(
-        <StyledLoad />
+        <>
+            <DivLoad>
+                <StyledLoad />
+            </DivLoad>
+        </>
+        
     )
 }

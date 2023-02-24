@@ -57,7 +57,7 @@ export const CardPerson  = styled.div`
         padding: 50px;
     }
     @media(max-width: 440px){
-        min-width: 300px;
+        min-width: 350px;
         padding: 25px;
     }
 `

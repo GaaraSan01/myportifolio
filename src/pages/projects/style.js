@@ -16,11 +16,16 @@ export const DivProjects = styled.div`
 `
 export const DivVerMais = styled.div`
     height: 20px;
-    margin: 30px auto;
+    margin: 20px auto;
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    p{
+        color: var(--white);
+        font-weigth: 600;
+    }
 `
 
 export const VerMais = styled.button`
@@ -32,6 +37,7 @@ export const VerMais = styled.button`
     text-decoration: none;
     font-weight: 700;
     transition: 0.3s ease-in-out;
+
     :hover{
         color: var(--azul);
         background: transparent;

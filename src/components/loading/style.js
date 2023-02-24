@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-export const StyledLoad = styled.span`
+export const DivLoad = styled.div`
+    height: 200px;
+    width: 300px;
+    margin: auto;
+
+    display: grid;
+    place-items: center;
+`
+
+export const StyledLoad = styled.div`
     height: 60px;
     width: 60px;
     background: transparent;
@@ -8,6 +17,7 @@ export const StyledLoad = styled.span`
     border-top: 5px solid transparent;
     border-radius: 50%;
     animation: loading 2s linear infinite;
+
 
     @keyframes loading{
         0%{

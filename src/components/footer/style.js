@@ -9,6 +9,7 @@ export const StyleFooter = styled.footer`
     justify-content: end;
     align-items: center;
     background: var(--azul);
+    margin-top: 20px;
 
     ul{
         display: flex;

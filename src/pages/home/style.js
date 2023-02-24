@@ -1,17 +1,15 @@
 import styled from 'styled-components'
 
-export const ContentPrincipal = styled.div`
+export const ContentPrincipal = styled.section`
     margin: auto;
     min-height: 80vh;
     width: 90%;
-    border-radius: 45px;
-    background: var(--verde);
+    background: transparent;
     display: flex;
     
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     @media(max-width: 1100px){
         width: 95%;
@@ -21,6 +19,7 @@ export const ContentPrincipal = styled.div`
     }
     @media(max-width: 820px){
         flex-direction: column;
+        justify-content: center;
         padding: 20px;
     }
 `
@@ -34,27 +33,29 @@ export const Copy = styled.div`
         font-weight: 700;
         font-size: 36px;
         line-height: 49px;
-        color: var(--azul);
+        color: var(--white);
         margin: 30px 0;
     }
     p{
         margin-bottom: 32px;
         text-align: justify;
+        color: var(--white);
     }
 
     a{
         padding: 10px 20px;
-        color: var(--azul);
-        background: transparent;
-        border: 1px solid var(--azul);
+        color: var(--verde);
+        background: var(--azul);
+        
         border-radius: 10px;
         text-decoration: none;
         font-weight: 700;
         transition: 0.3s ease-in-out;
     }
     a:hover{
-        color: var(--verde);
-        background: var(--azul);
+        color: var(--white);
+        background: transparent;
+        border: 1px solid var(--white);
     }
 
     @media(max-width: 986px){
@@ -122,6 +123,21 @@ export const Projetos = styled.section`
         height: auto;
         margin: auto;
     }
+    a{
+        padding: 10px 20px;
+        color: var(--verde);
+        background: var(--azul);
+        
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s ease-in-out;
+    }
+    a:hover{
+        color: var(--azul);
+        background: transparent;
+        border: 1px solid var(--azul);
+    }
 `
 export const CarrosselImg = styled.div`
     width: 90%;
@@ -175,8 +191,10 @@ export const ContentHabilities = styled.div`
         font-size: 20px;
     }
     @media(max-width: 660px){
+        justify-content: center;
         h1{
             font-size: 30px;
+            padding: 20px 0;
         }
         ul li{
             font-size: 16px;

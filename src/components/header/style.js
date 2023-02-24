@@ -11,7 +11,7 @@ export const StyleHeader = styled.header`
         height: 60px;
         width: 45vw;
         background: #64BC9E;
-        border-radius: 20px;
+        border-radius: 48px;
         display: flex;
         justify-content: center;
         align-items: center;

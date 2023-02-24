@@ -1,10 +1,11 @@
 //Components
 import Menu from "../../components/header"
 import { Footer } from "../../components/footer"
+import { Form } from "../../components/form"
 
 //Css
 import GlobalStyle from "../../style/global"
-import { ContentContact } from "./style"
+import { ContentContact, ContactInfos, SpaceContent, AllContacts } from "./style"
 
 
 
@@ -14,7 +15,18 @@ export const Contact = () => {
             <GlobalStyle />
             <Menu/>
             <ContentContact>
-                <h1>Testando 123</h1>
+                <ContactInfos>
+                    <SpaceContent>
+                        <AllContacts>
+                            <div>
+                                <h1>Hellow World</h1>
+                            </div>
+                        </AllContacts>
+                    </SpaceContent>
+                    <SpaceContent>
+                        <Form />
+                    </SpaceContent>
+                </ContactInfos>
             </ContentContact>
             <Footer />
         </>

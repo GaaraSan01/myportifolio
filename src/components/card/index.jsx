@@ -3,7 +3,7 @@ import { CardPerson } from "./style"
 export default function Card({img, name, bio, link}) {
     return(
         <CardPerson>
-            <img src={img} alt="Vinicius H." />
+            <img src={img}/>
             <h1>
                 {name}
             </h1>
