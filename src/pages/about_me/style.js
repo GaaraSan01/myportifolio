@@ -17,8 +17,12 @@ export const CopyAbout = styled.div`
 `
 
 export const DivAbout = styled.div`
-    height: 300px;
+    min-height: 300px;
     width: 90%;
-    background: var(--white);
     margin: 5vh auto;
+    padding: 15px;
+    p{
+        text-align: justify;
+        color: var(--white);
+    }
 `
