@@ -32,7 +32,7 @@ export const StyleHeader = styled.header`
         text-decoration: none;
         color: var(--azul);
     }
-    @media(max-width: 760px){
+    @media(max-width: 960px){
         div{
             width: 90%;
         }

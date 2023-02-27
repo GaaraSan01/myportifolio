@@ -2,16 +2,26 @@ import styled from "styled-components";
 
 export const FormStyle = styled.form`
     height: 70vh;
-    width: 400px;
+    min-width: 420px;
     background: var(--azul);
     border-radius: 30px;
     display: grid;
     justify-content: space-around;
     align-items: center;
+
+    @media(max-width: 1020px){
+       min-width: 500px;
+    }
+    @media(max-width: 540px){
+        min-width: 350px;
+    }
+    @media(max-width: 465px){
+        width: 100%;
+    }
 `
 export const DivForm = styled.div`
-    height: 80px;
-    width: 100%;
+    min-height: 80px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,6 +55,7 @@ export const DivForm = styled.div`
         min-width: 290px;
         max-width: 300px;
         min-height: 50px;
+        max-height: 100px;
         line-height: 28px;
         border: 2px solid transparent;
         border-bottom-color: var(--verde);

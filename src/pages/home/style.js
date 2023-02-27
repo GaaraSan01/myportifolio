@@ -82,7 +82,7 @@ export const TitleStyle = styled.div`
     margin: auto;
     padding-top: 50px;
 
-    color: var(--azul);
+    color: ${props => props.color === "white" ? "var(--white)" : "var(--azul)"};
     h1{
         position: absolute;
         font-weight: 700;
@@ -98,7 +98,7 @@ export const TitleStyle = styled.div`
         height: 4px;
         width: 70%;
         border-radius: 2px;
-        background-color: var(--azul);
+        background-color: ${props => props.color === "white" ? "var(--white)" : "var(--azul)"};
     }
 `
 export const GridStyle = styled.div`

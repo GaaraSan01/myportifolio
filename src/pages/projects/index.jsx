@@ -37,7 +37,7 @@ export const Project = () => {
             const data = projects.data
             setApiProjects(data)
         } catch (error) {
-            console.log(error)
+            console.log(error.message)
             setIsError(true)
         } finally {
             setLoading(false)
@@ -59,10 +59,10 @@ export const Project = () => {
                 <DivProjects>
                     {loading && <Load />}
                     {!isError && total && apiProjects.slice(0, 3).map((repos) => {
-                        return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url} />
+                        return <Card_Project key={repos.id} name={repos.name} phrases={repos.description} linkProject={repos.html_url} />
                     })}
                     {!isError && !total && apiProjects.map((repos) => {
-                        return <Card_Project key={repos.id} img={"test"} name={repos.name} linkProject={repos.html_url} />
+                        return <Card_Project key={repos.id} name={repos.name} phrases={repos.description} linkProject={repos.html_url} />
                     })}
                 </DivProjects>
                 <DivVerMais>
@@ -70,7 +70,7 @@ export const Project = () => {
                         <p>Carregando...</p>
                     )}
                     {isError && (
-                        <p>Error ao carregar...</p>
+                        <p>Error ao carregar os projetos...</p>
                     )}
                     {!loading && !isError && (
                         <VerMais onClick={handleClick}>

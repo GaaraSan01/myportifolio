@@ -10,7 +10,7 @@ export const CardPerson  = styled.div`
     height: 85%;
     min-width: 350px;
     max-width: 32vw;
-    background: #1B1D39;
+    background: var(--azul);
     color: white;
     border-radius: 48px;
 

@@ -57,6 +57,7 @@ export function Home() {
       const getProjects = await GetProjects.get()
       const data = getProjects.data
       setProjects(data)
+      console.log(data)
     } catch (error) {
       console.error(error)
       setIsErrorProjects(true)
@@ -146,8 +147,8 @@ export function Home() {
           {!isErrorProjects && projects.slice(0, 4).map(repos => {
             return <Card_Project
               key={repos.id}
-              img={'test'}
               name={repos.name}
+              phrases={repos.description}
               linkProject={repos.html_url}
             />
           })}
