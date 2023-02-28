@@ -20,9 +20,9 @@ export const About = () => {
                             Olá! Sou Vinícius Henrique, um programador Front-End de Curitiba, PR. 
                             Desde cedo, sempre tive fascínio pela tecnologia e, há quase dois anos, 
                             tenho focado meus estudos em Desenvolvimento Web. <br />
-                            Após ter enfrentado dificuldades ao desenvolver sites em WordPress, decidi aprofundar meus conhecimentos 
-                            em programação para me tornar um profissional ainda mais capacitado e apto a oferecer soluções eficazes para meus clientes. 
-                            Atualmente, estou comprometido com meu objetivo e continuo em busca de aprimoramento constante para me destacar no mercado de trabalho.
+                            Após desenvolver alguns sites em WordPress, encontrei algumas dificuldades em executar tarefas mais complexas. 
+                            Isso despertou em mim uma vontade ainda maior de aprimorar minhas habilidades 
+                            em programação e me tornar um profissional renomado nessa área.
                             <br />
                             Se você está procurando um programador Front-End comprometido e dedicado, entre em contato comigo. 
                             Será um prazer ajudar a tornar seu projeto uma realidade!

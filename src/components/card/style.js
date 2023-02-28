@@ -6,7 +6,7 @@ export const CardPerson  = styled.div`
     align-items: center;
     padding: 30px;
     gap: 10px;
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 85%;
     min-width: 350px;
     max-width: 32vw;

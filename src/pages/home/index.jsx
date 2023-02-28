@@ -57,7 +57,6 @@ export function Home() {
       const getProjects = await GetProjects.get()
       const data = getProjects.data
       setProjects(data)
-      console.log(data)
     } catch (error) {
       console.error(error)
       setIsErrorProjects(true)
