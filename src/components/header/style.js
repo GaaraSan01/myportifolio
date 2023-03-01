@@ -9,7 +9,7 @@ export const StyleHeader = styled.header`
     div{
         height: 60px;
         width: 45vw;
-        background: #64BC9E;
+        background: var(--verde);
         border-radius: 48px;
         display: flex;
         justify-content: center;
