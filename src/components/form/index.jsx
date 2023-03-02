@@ -15,6 +15,10 @@ export const Form = () => {
 
     const sendEmail = (event) => {
         event.preventDefault()
+        
+        if(name != ''&& email != '' && message != "" ){
+            setDesab(false)
+        }
 
         const templatParams = {
             to_name: name,
