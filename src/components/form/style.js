@@ -86,5 +86,10 @@ export const DivForm = styled.div`
             background: transparent;
             border: 1px solid var(--white);
         }
+        :disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            /* Outros estilos desejados */
+        }
     }
 `

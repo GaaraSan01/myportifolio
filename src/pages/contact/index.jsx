@@ -6,6 +6,7 @@ import { FaWhatsapp, FaInstagram, FaGithub } from "react-icons/fa"
 //Css
 import GlobalStyle from "../../style/global"
 import { ContentContact, ContactInfos, SpaceContent, AllContacts } from "./style"
+import {TitleStyle} from "../home/style"
 
 
 
@@ -15,6 +16,9 @@ export const Contact = () => {
             <GlobalStyle />
             <Menu/>
             <ContentContact>
+                <TitleStyle color="white">
+                    <h1>Contatos</h1>
+                </TitleStyle>
                 <ContactInfos>
                     <SpaceContent>
                         <AllContacts>

@@ -5,6 +5,7 @@ export const ContentContact = styled.section`
     height: auto;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 15px;
@@ -17,6 +18,7 @@ export const ContactInfos = styled.div`
     align-items: center;
     justify-content: space-around;
     border-radius: 48px;
+    margin-top: 20px;
 
     @media(max-width: 1080px){
         flex-direction: column-reverse;

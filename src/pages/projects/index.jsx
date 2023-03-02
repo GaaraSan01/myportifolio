@@ -53,7 +53,7 @@ export const Project = () => {
             <GlobalStyle />
             <Menu />
             <ContentProject>
-                <TitleStyle>
+                <TitleStyle color="white">
                     <h1>Meus Projetos</h1>
                 </TitleStyle>
                 <DivProjects>

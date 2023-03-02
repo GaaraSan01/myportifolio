@@ -9,24 +9,33 @@ export const Form = () => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [message, setMessage] = useState()
+    const [contactLoad, setContactLoad] = useState(false)
+
 
     const sendEmail = (event) => {
         event.preventDefault()
+
         const templatParams = {
             to_name: name,
             e_mail: email,
             message: message
         }
 
+        setContactLoad(true)
+
         emailjs.send("service_xgx8onc", "template_0v9dncg", templatParams, "uGY3ymnMzJ9pHQilO")
-        .then((response) => {
-            console.log("Enviado com sucesso!", response.status, response.text)
-        })
-        .catch((error) => console.error(error))
+            .then(() => {
+                alert("Menssagem enviada com Sucesso")
+                setName('')
+                setEmail('')
+                setMessage('')
+            })
+            .catch((error) => console.error(error))
+            .finally(() => setContactLoad(false))
     }
 
     return (
-        <FormStyle onSubmit={sendEmail}>
+        <FormStyle>
             <DivForm>
                 <h1>Entrar em Contato</h1>
             </DivForm>
@@ -37,6 +46,7 @@ export const Form = () => {
                     name="name"
                     id="name"
                     onChange={(props) => setName(props.target.value)}
+                    value={name}
                 />
             </DivForm>
             <DivForm>
@@ -46,6 +56,7 @@ export const Form = () => {
                     name="e-mail"
                     id="e-mail"
                     onChange={(props) => setEmail(props.target.value)}
+                    value={email}
                 />
             </DivForm>
             <DivForm>
@@ -56,10 +67,13 @@ export const Form = () => {
                     cols="30"
                     rows="2"
                     onChange={(props) => setMessage(props.target.value)}
+                    value={message}
                 ></textarea>
             </DivForm>
             <DivForm>
-                <button>Enviar</button>
+                <button onClick={sendEmail} disabled={name == '' || email == '' || message == '' || contactLoad}>
+                    {contactLoad ? "Enviando..." : "Enviar"}
+                </button>
             </DivForm>
         </FormStyle>
     )
