@@ -9,6 +9,7 @@ export const Form = () => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [message, setMessage] = useState()
+    const [desab, setDesab] = useState(true)
     const [contactLoad, setContactLoad] = useState(false)
 
 
@@ -31,7 +32,10 @@ export const Form = () => {
                 setMessage('')
             })
             .catch((error) => console.error(error))
-            .finally(() => setContactLoad(false))
+            .finally(() => {
+                setContactLoad(false)
+                setDesab(false)
+            })
     }
 
     return (
@@ -71,7 +75,7 @@ export const Form = () => {
                 ></textarea>
             </DivForm>
             <DivForm>
-                <button onClick={sendEmail} disabled={name == '' || email == '' || message == '' || contactLoad}>
+                <button onClick={sendEmail} disabled={name == '' || email == '' || message == '' || contactLoad || desab}>
                     {contactLoad ? "Enviando..." : "Enviar"}
                 </button>
             </DivForm>
