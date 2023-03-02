@@ -111,7 +111,7 @@ export const MenuResponsivo = styled.nav`
     }
 
    ${({isVisible}) => isVisible && css`
-        height: calc(100vh - 18vh);
+        height: calc(100vh - 20vh);
         visibility: visible;
     `}
 `
