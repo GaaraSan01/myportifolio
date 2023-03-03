@@ -6,19 +6,15 @@ import emailjs from "@emailjs/browser"
 
 
 export const Form = () => {
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [message, setMessage] = useState()
-    const [desab, setDesab] = useState(true)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
     const [contactLoad, setContactLoad] = useState(false)
 
+    
 
     const sendEmail = (event) => {
         event.preventDefault()
-        
-        if(name != ''&& email != '' && message != "" ){
-            setDesab(false)
-        }
 
         const templatParams = {
             to_name: name,
@@ -79,7 +75,7 @@ export const Form = () => {
                 ></textarea>
             </DivForm>
             <DivForm>
-                <button onClick={sendEmail} disabled={name == '' || email == '' || message == '' || contactLoad || desab}>
+                <button onClick={sendEmail} disabled={name == '' || email == '' || message == '' || contactLoad}>
                     {contactLoad ? "Enviando..." : "Enviar"}
                 </button>
             </DivForm>

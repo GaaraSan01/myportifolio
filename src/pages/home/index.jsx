@@ -46,11 +46,43 @@ export function Home() {
   const [loading, setLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
-
   //Tratamento dos Projetos da pagina Home
   const [loadingProjects, setLoadingProjects] = useState(true)
   const [isErrorProjects, setIsErrorProjects] = useState(false)
 
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [currentPhrase, setCurrentPhrase] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  const phrases = [
+    'Welcome to my portfolio!',
+    'I`m developer Front-End from Brazil',
+  ]
+
+  useEffect(() => {
+    const speedUp = Math.random() * (80 - 50) + 50;
+    const normalSpeed = Math.random() * (300 - 250) + 150;
+    const time = deleting ? speedUp : normalSpeed;
+  
+    const intervalId = setTimeout(() => {
+      if (!deleting && currentPhrase === phrases[currentPhraseIndex]) {
+        setDeleting(true);
+      } else if (deleting && currentPhrase === '') {
+        setDeleting(false);
+        setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
+      } else {
+        setCurrentPhrase((prev) =>
+          deleting
+            ? prev.slice(0, -1)
+            : phrases[currentPhraseIndex].slice(0, prev.length + 1)
+        );
+      }
+    }, time);
+  
+    return () => clearInterval(intervalId);
+  }, [currentPhrase, deleting, currentPhraseIndex]);
+  
+  
   const ProjectsApi = async () => {
     //Pegandos parte dos Projetos do github
     try {
@@ -84,6 +116,7 @@ export function Home() {
   useEffect(() => {
     getPerson()
     ProjectsApi()
+    setCurrentPhrase(phrases[0]);
   }, [])
 
   return (
@@ -103,11 +136,13 @@ export function Home() {
         }
         {!isError && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={api.html_url} />}
         <Copy>
-          <h1>I`m developer Front-End from Brazil</h1>
+          <div>
+            <h1>{currentPhrase}</h1>
+          </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Facilis alias minus atque esse laboriosam tenetur pariatur odio debitis eum doloremque, officiis,
-            reprehenderit quam quisquam error cum quos consectetur cupiditate rerum!
+            Olá! Sou Vinícius Henrique, tenho 19 anos, sou um programador Front-End de Curitiba, PR. 
+            Desde cedo, sempre tive fascínio pela tecnologia e, há quase dois anos, 
+            tenho focado meus estudos em Desenvolvimento Web.
           </p>
           <Link to={"/contact"}>
             Entrar em Contato
@@ -118,7 +153,6 @@ export function Home() {
         <TitleStyle>
           <h1>Conhecimentos</h1>
         </TitleStyle>
-
         <GridStyle>
           <MiniCard img={html5} word={'HTML5'} />
           <MiniCard img={css3} word={'CSS3'} />
@@ -171,7 +205,6 @@ export function Home() {
           </div>
         </ContentHabilities>
       </StyleHabilities>
-
       <Footer />
     </div>
   )

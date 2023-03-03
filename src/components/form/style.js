@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.form`
-    height: 70vh;
+    min-height: 70vh;
     min-width: 420px;
     background: var(--azul);
     border-radius: 30px;

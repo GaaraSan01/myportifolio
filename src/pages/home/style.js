@@ -29,13 +29,6 @@ export const Copy = styled.div`
     height: auto;
     padding: 30px;
 
-    h1{
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 49px;
-        color: var(--white);
-        margin: 30px 0;
-    }
     p{
         margin-bottom: 32px;
         text-align: justify;
@@ -68,6 +61,19 @@ export const Copy = styled.div`
     }
     @media(max-width: 820px){
         padding: 10px;
+    }
+
+    div{
+        min-height: 100px;
+        width: 100%;
+        margin: 30px 0;
+
+        h1{
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 49px;
+            color: var(--white);
+        }
     }
 `
 
