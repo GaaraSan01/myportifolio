@@ -14,9 +14,9 @@ export const Card_Project = ({ name, phrases, linkProject, deploy }) => {
                 </div>
                 <div>
                     <a href={linkProject} target="_blanc"><FaCode/> Código</a>
-                    {
-                        deploy == null ? null : <a href={deploy} target="_blanc"><FaGreaterThan/> Deploy</a>
-                    }
+                    {deploy === null && null}
+                    {deploy === "" && null}
+                    {deploy && <a href={deploy} target="_blanc"><FaGreaterThan/> Deploy</a>}
                 </div>
             </Project>
         </>
