@@ -21,10 +21,13 @@ export const Project = styled.div`
     }
     
     div{
-        width: 90%;
+        width: 100%;
         height: 50px;
         padding: 15px;
+        display: flex;
+        gap: 15px;
         a{
+            height: 45px;
             padding: 10px 20px;
             color: var(--verde);
             background: var(--azul);

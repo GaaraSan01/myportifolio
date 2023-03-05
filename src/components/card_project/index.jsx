@@ -1,8 +1,9 @@
 import { Project } from "./style"
+import {FaGreaterThan, FaCode} from "react-icons/fa"
 
 
-export const Card_Project = ({name, phrases, linkProject}) => {
-    return(
+export const Card_Project = ({ name, phrases, linkProject, deploy }) => {
+    return (
         <>
             <Project>
                 <div>
@@ -11,7 +12,12 @@ export const Card_Project = ({name, phrases, linkProject}) => {
                 <div>
                     <p>{phrases}</p>
                 </div>
-                <div><a href={linkProject} target="_blanc">Ver no Github</a></div>
+                <div>
+                    <a href={linkProject} target="_blanc"><FaCode/> Código</a>
+                    {
+                        deploy == null ? null : <a href={deploy} target="_blanc"><FaGreaterThan/> Deploy</a>
+                    }
+                </div>
             </Project>
         </>
     )

@@ -36,6 +36,7 @@ export const Project = () => {
             const projects = await GetProjects.get()
             const data = projects.data
             setApiProjects(data)
+            console.log(data)
         } catch (error) {
             console.log(error.message)
             setIsError(true)
@@ -58,11 +59,23 @@ export const Project = () => {
                 </TitleStyle>
                 <DivProjects>
                     {loading && <Load />}
-                    {!isError && total && apiProjects.slice(0, 3).map((repos) => {
-                        return <Card_Project key={repos.id} name={repos.name} phrases={repos.description} linkProject={repos.html_url} />
+                    {!loading && total && apiProjects.slice(0, 3).map((repos) => {
+                        return <Card_Project 
+                            key={repos.id} 
+                            name={repos.name} 
+                            phrases={repos.description} 
+                            linkProject={repos.html_url}
+                            deploy={repos.homepage}
+                        />
                     })}
-                    {!isError && !total && apiProjects.map((repos) => {
-                        return <Card_Project key={repos.id} name={repos.name} phrases={repos.description} linkProject={repos.html_url} />
+                    {!loading && !total && apiProjects.map((repos) => {
+                        return <Card_Project 
+                            key={repos.id} 
+                            name={repos.name} 
+                            phrases={repos.description} 
+                            linkProject={repos.html_url}
+                            deploy={repos.homepage}
+                        />
                     })}
                 </DivProjects>
                 <DivVerMais>

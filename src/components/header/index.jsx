@@ -21,9 +21,9 @@ export default function Menu() {
                     <h1><Link to={"/"}>VH</Link></h1>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li> <Link to="/project">Projects</Link></li>
-                        <li> <Link to="/contact">Contacts</Link></li>
-                        <li><Link to="/about">About me</Link></li>
+                        <li> <Link to="/project">Projetos</Link></li>
+                        <li> <Link to="/contact">Contatos</Link></li>
+                        <li><Link to="/about">Sobre mim</Link></li>
                     </ul>
                     <Hamburguer onClick={handleHamburger} isVisible={open}>
                         {open && <FaTimes/>}

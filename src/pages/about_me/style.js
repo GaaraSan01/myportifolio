@@ -25,6 +25,7 @@ export const DivAbout = styled.div`
     p{
         text-align: justify;
         color: var(--white);
+        user-select: none;
     }
     @media(max-width: 414px){
         p{

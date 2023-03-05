@@ -17,6 +17,7 @@ export const Cards = styled.div`
         width: 50px;
         height: 50px;
         border-radius: 10px;
+        user-select: none;
     }
     p{
         font-family: 'Poppins';
@@ -25,6 +26,7 @@ export const Cards = styled.div`
         font-size: 25px;
         line-height: 42px;
         color: var(--azul);
+        user-select: none;
     }
 
     :hover{

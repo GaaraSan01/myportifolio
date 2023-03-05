@@ -60,6 +60,7 @@ export function Home() {
   ]
 
   useEffect(() => {
+
     const speedUp = Math.random() * (80 - 50) + 50;
     const normalSpeed = Math.random() * (300 - 250) + 150;
     const time = deleting ? speedUp : normalSpeed;
@@ -67,6 +68,7 @@ export function Home() {
     const intervalId = setTimeout(() => {
       if (!deleting && currentPhrase === phrases[currentPhraseIndex]) {
         setDeleting(true);
+        
       } else if (deleting && currentPhrase === '') {
         setDeleting(false);
         setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
@@ -78,7 +80,7 @@ export function Home() {
         );
       }
     }, time);
-  
+
     return () => clearInterval(intervalId);
   }, [currentPhrase, deleting, currentPhraseIndex]);
   
@@ -95,7 +97,6 @@ export function Home() {
     } finally {
       setLoadingProjects(false)
     }
-
   }
 
   const getPerson = () => {
@@ -134,7 +135,7 @@ export function Home() {
             </div>
           )
         }
-        {!isError && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={api.html_url} />}
+        {!loading && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={"#conhecimentos"} />}
         <Copy>
           <div>
             <h1>{currentPhrase}</h1>
@@ -149,7 +150,7 @@ export function Home() {
           </Link>
         </Copy>
       </ContentPrincipal>
-      <Conhecimentos>
+      <Conhecimentos id='conhecimentos'>
         <TitleStyle>
           <h1>Conhecimentos</h1>
         </TitleStyle>
@@ -177,12 +178,13 @@ export function Home() {
               </div>
             )
           }
-          {!isErrorProjects && projects.slice(0, 4).map(repos => {
+          {!loadingProjects&& projects.slice(0, 4).map(repos => {
             return <Card_Project
               key={repos.id}
               name={repos.name}
               phrases={repos.description}
               linkProject={repos.html_url}
+              deploy={repos.homepage}
             />
           })}
         </CarrosselImg>

@@ -33,6 +33,7 @@ export const Copy = styled.div`
         margin-bottom: 32px;
         text-align: justify;
         color: var(--white);
+        user-select: none;
     }
 
     a{
@@ -44,6 +45,7 @@ export const Copy = styled.div`
         text-decoration: none;
         font-weight: 700;
         transition: 0.3s ease-in-out;
+        user-select: none;
     }
     a:hover{
         color: var(--white);
@@ -73,6 +75,7 @@ export const Copy = styled.div`
             font-size: 40px;
             line-height: 49px;
             color: var(--white);
+            user-select: none;
         }
     }
 `
@@ -94,6 +97,7 @@ export const TitleStyle = styled.div`
         font-weight: 700;
         font-size: 36px;
         line-height: 49px;
+        user-select: none;
     }
     h1::after{
         position: absolute;
@@ -138,6 +142,7 @@ export const Projetos = styled.section`
         text-decoration: none;
         font-weight: 700;
         transition: 0.3s ease-in-out;
+        user-select: none;
     }
     a:hover{
         color: var(--azul);
@@ -185,7 +190,7 @@ export const ContentHabilities = styled.div`
 
     div{
         width: 45%;;
-        -height: 90%;
+        min-height: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -193,9 +198,11 @@ export const ContentHabilities = styled.div`
     }
     h1{
         font-size: 40px;
+        user-select: none;
     }
     ul li{
         font-size: 20px;
+        user-select: none;
     }
     @media(max-width: 660px){
         justify-content: center;
