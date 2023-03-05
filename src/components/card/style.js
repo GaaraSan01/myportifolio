@@ -45,7 +45,6 @@ export const CardPerson  = styled.div`
         background: #64BC9E;
         border-radius: 10px;
         transition: 0.3s ease-in-out;
-        scroll-behavior: smooth;
     }
 
     a:hover{
