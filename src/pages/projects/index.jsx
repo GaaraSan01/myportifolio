@@ -36,7 +36,6 @@ export const Project = () => {
             const projects = await GetProjects.get()
             const data = projects.data
             setApiProjects(data)
-            console.log(data)
         } catch (error) {
             console.log(error.message)
             setIsError(true)
