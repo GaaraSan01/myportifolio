@@ -122,7 +122,7 @@ export function Home() {
       <Menu />
       <ContentPrincipal>
         {
-          loading && <Load />
+          loadingProjects && <Load />
         }
         {
           isError && (
