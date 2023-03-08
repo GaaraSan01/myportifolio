@@ -43,7 +43,6 @@ export function Home() {
   const [projects, setProjects] = useState([])
 
   //Tratamento do Card Principal
-  const [loading, setLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
   //Tratamento dos Projetos da pagina Home
@@ -109,9 +108,6 @@ export function Home() {
         console.error(error)
         setIsError(true)
       })
-      .finally(
-        setLoading(false)
-      )
   }
 
   useEffect(() => {
@@ -135,7 +131,7 @@ export function Home() {
             </div>
           )
         }
-        {!loading && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={"#conhecimentos"} />}
+        {!loadingProjects && <Card img={api.avatar_url} name={api.name} bio={api.bio} link={"#conhecimentos"} />}
         <Copy>
           <div>
             <h1>{currentPhrase}</h1>
