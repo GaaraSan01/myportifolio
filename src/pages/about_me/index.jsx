@@ -24,8 +24,8 @@ export const About = () => {
                             Isso despertou em mim uma vontade ainda maior de aprimorar minhas habilidades 
                             em programação e me tornar um profissional renomado nessa área.
                             <br />
-                            Se você está procurando um programador Front-End comprometido e dedicado, entre em contato comigo. 
-                            Será um prazer ajudar a tornar seu projeto uma realidade!
+                            Continuo comprometido com meu objetivo e buscando constantemente me atualizar e aprimorar minhas habilidades como programador Front-End, 
+                            a fim de oferecer as melhores soluções para meus clientes e projetos.
                         </p>
                     </DivAbout>
                 </CopyAbout>
